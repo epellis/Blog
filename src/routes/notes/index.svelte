@@ -31,10 +31,10 @@
     {#each notes as note}
       <div class="container">
         <Link
-          title={'My Link'}
-          preview={'This is a summary of my link'}
-          date={new Date()}
-          href={`/notes/${'My Link'}`} />
+          title={note.title}
+          preview={note.preview}
+          date={note.date}
+          href={`/notes/${note.slug}`} />
       </div>
     {/each}
   </section>

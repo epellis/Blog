@@ -30,7 +30,7 @@
       </p>
       <br />
       <p>
-        Unfourtonately I do not have enough time to keep this blog up to date on
+        Unfortunately I do not have enough time to keep this blog up to date on
         a regular basis but check back semianually to see what I am up to!
       </p>
       <br />
