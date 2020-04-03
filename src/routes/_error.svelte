@@ -9,10 +9,13 @@
   <title>{status}</title>
 </svelte:head>
 
-<h1>{status}</h1>
-
-<p>{error.message}</p>
-
-{#if dev && error.stack}
-  <pre>{error.stack}</pre>
-{/if}
+<body>
+  <section class="hero is-dark">
+    <div class="hero-body">
+      <div class="container is-fluid">
+        <h1 class="title">Error: {status}</h1>
+        <h2 class="subtitle">Message: {error.message}</h2>
+      </div>
+    </div>
+  </section>
+</body>

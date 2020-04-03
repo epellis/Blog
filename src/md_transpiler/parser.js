@@ -2,6 +2,8 @@ import * as fm from "front-matter";
 import fs from "fs";
 import util from "util";
 import path from "path";
+import unified from "unified";
+import * as markdown from "remark-parse"
 
 const readDir = util.promisify(fs.readdir);
 const readFile = util.promisify(fs.readFile);
@@ -21,15 +23,19 @@ export class MarkdownParser {
     }
 
     // Parse the contents
-    parse(contents) {
+    async parse(contents) {
         let { attributes, body } = fm(contents)
+
+        let tree = unified()
+            .use(markdown)
+            .parse(body)
 
         return {
             title: attributes.title,
             slug: encodeURIComponent(attributes.title),
             preview: "",
             date: new Date(attributes.date),
-            ast: {}
+            ast: tree
         }
     }
 }

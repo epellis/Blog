@@ -10,6 +10,7 @@
 
 <script>
   import Link from "../../components/Link.svelte";
+  import Markdown from "../../components/Markdown.svelte";
 
   export let notes;
 </script>
@@ -35,6 +36,9 @@
           preview={note.preview}
           date={note.date}
           href={`/notes/${note.slug}`} />
+      </div>
+      <div class="container">
+        <Markdown document={note} />
       </div>
     {/each}
   </section>
