@@ -1,5 +1,6 @@
 <script>
   import moment from "moment";
+  import MDBase from "./MDBase.svelte";
 
   export let document;
 
@@ -14,8 +15,8 @@
       <time>{moment(document.date).format('MMMM Do YYYY')}</time>
     </h2>
   </div>
-
+  <br />
   <div class="container">
-    <p>I'm the document</p>
+    <MDBase tree={document.ast} />
   </div>
 </section>
