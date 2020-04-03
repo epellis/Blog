@@ -1,6 +1,6 @@
 <script context="module">
-  export function preload({ params, query }) {
-    return this.fetch("notes")
+  export async function preload({ params, query }) {
+    return await this.fetch("notes.json")
       .then(r => r.json())
       .then(notes => {
         return { notes };
@@ -10,6 +10,8 @@
 
 <script>
   export let notes;
+
+  console.log(`Notes: ${notes} Type: ${typeof notes}`);
 </script>
 
 <svelte:head>
@@ -28,6 +30,6 @@
 
 <ul>
   {#each notes as note}
-    <p>note</p>
+    <p>{note}</p>
   {/each}
 </ul>
