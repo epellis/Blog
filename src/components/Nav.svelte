@@ -4,9 +4,9 @@
 
 <nav class="navbar" role="navigation">
   <div class="navbar-brand">
-    <p class="navbar-item">
+    <a href="/" class="navbar-item">
       <strong>Ned Ellis</strong>
-    </p>
+    </a>
 
     <a
       href="/"
@@ -21,7 +21,6 @@
 
   <div class={expandBurger ? 'navbar-menu is-active' : 'navbar-menu'}>
     <div class="navbar-start">
-      <a class="navbar-item" href="/">Home</a>
       <a class="navbar-item" href="/about">About</a>
       <a class="navbar-item" href="/projects">Projects</a>
       <a class="navbar-item" href="/notes">Notes</a>
