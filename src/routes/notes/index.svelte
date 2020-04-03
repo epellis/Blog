@@ -9,9 +9,9 @@
 </script>
 
 <script>
-  export let notes;
+  import Link from "../../components/Link.svelte";
 
-  console.log(`Notes: ${notes} Type: ${typeof notes}`);
+  export let notes;
 </script>
 
 <svelte:head>
@@ -26,10 +26,16 @@
       </div>
     </div>
   </section>
-</body>
 
-<ul>
-  {#each notes as note}
-    <p>{note}</p>
-  {/each}
-</ul>
+  <section class="section">
+    {#each notes as note}
+      <div class="container">
+        <Link
+          title={'My Link'}
+          preview={'This is a summary of my link'}
+          date={new Date()}
+          href={`/notes/${'My Link'}`} />
+      </div>
+    {/each}
+  </section>
+</body>
