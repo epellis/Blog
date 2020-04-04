@@ -3,8 +3,6 @@
   import MDBase from "./MDBase.svelte";
 
   export let document;
-
-  console.log("Document:", document);
 </script>
 
 <section class="section">

@@ -15,7 +15,9 @@
         depth explanations to obscure algorithms and data structures I find to
         be neat in my
         <a href="/notes">notes</a>
-        section.
+        section. This summer I will be interning as a software engineer at
+        <a href="https://databricks.com/">Databricks</a>
+        .
       </p>
       <br />
       <p>

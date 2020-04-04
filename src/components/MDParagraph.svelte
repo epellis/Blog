@@ -1,7 +1,5 @@
 <script>
   export let tree;
-
-  console.log("Paragraph Parsing:", tree);
 </script>
 
 <p>

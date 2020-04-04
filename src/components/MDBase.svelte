@@ -4,8 +4,6 @@
   import MDCode from "./MDCode.svelte";
 
   export let tree;
-
-  console.log("Dispatching:", tree);
 </script>
 
 {#if tree.type === 'root'}

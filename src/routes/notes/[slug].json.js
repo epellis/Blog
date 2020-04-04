@@ -10,8 +10,6 @@ const cache = new Map()
 export async function get(req, res) {
     const { slug } = req.params;
 
-    console.log("Backend trying to find:", slug);
-
     // If cache hit, serve markdown directly
     if (cache.has(slug)) {
         res.writeHead(200, {

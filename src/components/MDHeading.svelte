@@ -1,8 +1,6 @@
 <script>
   export let tree;
 
-  console.log("Heading Parsing:", tree);
-
   let text = tree.children[0].value;
 </script>
 

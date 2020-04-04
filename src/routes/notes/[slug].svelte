@@ -1,9 +1,5 @@
 <script context="module">
   export async function preload({ params, query }) {
-    // the `slug` parameter is available because
-    // this file is called [slug].svelte
-    console.log("Looking for slug:", params.slug);
-
     const res = await this.fetch(`notes/${params.slug}.json`);
     const data = await res.json();
 
@@ -20,5 +16,9 @@
 
   export let document;
 </script>
+
+<svelte:head>
+  <title>{document.title}</title>
+</svelte:head>
 
 <Markdown {document} />
