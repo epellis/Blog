@@ -16,6 +16,11 @@ export class MarkdownParser {
         return paths
     }
 
+    // Return true if file exists, else false
+    findFile(filelocation) {
+        return fs.existsSync(filelocation);
+    }
+
     // Read the contents of a file and return them
     async readFile(filelocation) {
         const contents = await readFile(filelocation, 'utf8')
@@ -23,7 +28,7 @@ export class MarkdownParser {
     }
 
     // Parse the contents
-    async parse(contents) {
+    async parse(filename, contents) {
         let { attributes, body } = fm(contents)
 
         let tree = unified()
@@ -32,7 +37,7 @@ export class MarkdownParser {
 
         return {
             title: attributes.title,
-            slug: encodeURIComponent(attributes.title),
+            slug: encodeURIComponent(filename),
             preview: "",
             date: new Date(attributes.date),
             ast: tree

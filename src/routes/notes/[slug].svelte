@@ -1,18 +1,24 @@
-<script>
-  // export let post;
-</script>
-
-<!-- <script context="module">
+<script context="module">
   export async function preload({ params, query }) {
     // the `slug` parameter is available because
     // this file is called [slug].svelte
-    const res = await this.fetch(`blog/${params.slug}.json`);
+    console.log("Looking for slug:", params.slug);
+
+    const res = await this.fetch(`notes/${params.slug}.json`);
     const data = await res.json();
 
     if (res.status === 200) {
-      return { post: data };
+      return { document: data };
     } else {
       this.error(res.status, data.message);
     }
   }
-</script> -->
+</script>
+
+<script>
+  import Markdown from "../../components/Markdown.svelte";
+
+  export let document;
+</script>
+
+<Markdown {document} />

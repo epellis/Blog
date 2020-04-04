@@ -37,9 +37,9 @@
           date={note.date}
           href={`/notes/${note.slug}`} />
       </div>
-      <div class="container">
+      <!-- <div class="container">
         <Markdown document={note} />
-      </div>
+      </div> -->
     {/each}
   </section>
 </body>
