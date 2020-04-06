@@ -7,7 +7,7 @@
     <div class="hero-body">
       <div class="container is-fluid">
         <h1 class="title">Ned Ellis</h1>
-        <h2 class="subtitle">Welcome to my corner of the internet</h2>
+        <h2 class="subtitle">Welcome to my chunk of the IP address space</h2>
       </div>
     </div>
   </section>

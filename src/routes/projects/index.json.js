@@ -6,14 +6,14 @@ export async function get(req, res) {
     });
 
     const parser = new MarkdownParser();
-    const files = await parser.getFiles("content/notes", ".md")
+    const files = await parser.getFiles("content/projects", ".md")
     let contents = [];
     for (const file of files) {
-        const parsedFile = await parser.readFile(`content/notes/${file}`);
+        const parsedFile = await parser.readFile(`content/projects/${file}`);
         contents.push({ contents: parsedFile, path: file })
     }
 
-    const notes = await Promise.all(contents.map(content => parser.parse(content.path, content.contents)))
+    const projects = await Promise.all(contents.map(content => parser.parse(content.path, content.contents)))
 
-    res.end(JSON.stringify(notes))
+    res.end(JSON.stringify(projects))
 }

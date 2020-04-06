@@ -1,9 +1,9 @@
 <script context="module">
   export async function preload({ params, query }) {
-    return await this.fetch("notes.json")
+    return await this.fetch("projects.json")
       .then(r => r.json())
-      .then(notes => {
-        return { notes };
+      .then(projects => {
+        return { projects };
       });
   }
 </script>
@@ -12,30 +12,30 @@
   import Link from "../../components/Link.svelte";
   import Markdown from "../../components/Markdown.svelte";
 
-  export let notes;
+  export let projects;
 </script>
 
 <svelte:head>
-  <title>Notes</title>
+  <title>Projects</title>
 </svelte:head>
 
 <body>
   <section class="hero is-dark">
     <div class="hero-body">
       <div class="container is-fluid">
-        <h1 class="title">Notes</h1>
+        <h1 class="title">Projects</h1>
       </div>
     </div>
   </section>
 
   <section class="section">
-    {#each notes as note}
+    {#each projects as project}
       <div class="container">
         <Link
-          title={note.title}
-          preview={note.preview}
-          date={note.date}
-          href={`/notes/${note.slug}`} />
+          title={project.title}
+          preview={project.preview}
+          date={project.date}
+          href={`/projects/${project.slug}`} />
       </div>
     {/each}
   </section>

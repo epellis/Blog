@@ -17,7 +17,7 @@ export async function get(req, res) {
     const parser = new MarkdownParser();
 
     // Try to find the file
-    const filename = `content/notes/${slug}`;
+    const filename = `content/projects/${slug}`;
     if (!parser.findFile(filename)) {
         res.writeHead(404, {
             'Content-Type': 'application/json'
@@ -31,9 +31,9 @@ export async function get(req, res) {
 
     // Parse and cache the file
     const contents = await parser.readFile(filename)
-    const note = await parser.parse(filename, contents)
+    const project = await parser.parse(filename, contents)
 
-    cache.set(slug, note);
+    cache.set(slug, project);
 
-    res.end(JSON.stringify(note))
+    res.end(JSON.stringify(project))
 }
